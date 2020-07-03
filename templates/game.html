@@ -2,8 +2,21 @@
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}?q={{ time }}" />
+        <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap" rel="stylesheet">
         <title>Welcome!</title>
     </head>
+
+                    <style>
+            body {
+            background-image: url('/../static/images/8.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            }
+            </style>
+
+
+
     <body>
         <h1>Scattegories</h1>
         <div class="card" style="width: 18rem;">
@@ -13,9 +26,9 @@
     <p class="card-text">Your letter is:{{props.letter}}</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Category 1: {{props.category_1}}</li>
-    <li class="list-group-item">Category 2: {{props.category_2}}</li>
-    <li class="list-group-item">Category 3: {{props.category_3}}</li>
+     {%for item in props.categories%}
+    <li class="list-group-item">Category {{item}}</li>
+    {%endfor%}
   </ul>
   <div class="card-body">
     <a href="/game" class="card-link">Play again!</a>
