@@ -1,3 +1,6 @@
-body{
- background-color: lightblue
+h1{
+    font-family: 'MuseoModerno', cursive;
+    font-size: 100px;
+    text-align: center;
+    text-shadow: 2px 2px lightslategray;
 }
